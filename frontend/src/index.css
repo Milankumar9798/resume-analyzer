@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply scroll-smooth;
+  }
+  body {
+    @apply bg-slate-50 text-slate-900 dark:bg-ink-900 dark:text-slate-100 font-sans antialiased transition-colors duration-300;
+  }
+  h1, h2, h3, h4 {
+    @apply font-display;
+  }
+  ::selection {
+    @apply bg-brand-500/30;
+  }
+  /* Thin, unobtrusive scrollbars that still work in both themes */
+  ::-webkit-scrollbar { width: 8px; height: 8px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { @apply bg-slate-300 dark:bg-ink-700 rounded-full; }
+}
+
+@layer components {
+  .glass-panel {
+    @apply bg-white/70 dark:bg-ink-800/60 backdrop-blur-md border border-white/60 dark:border-white/5 shadow-glass;
+  }
+
+  .card {
+    @apply glass-panel rounded-2xl p-6;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-brand-600 to-signal-600 px-5 py-2.5 text-sm font-semibold text-white shadow-lg shadow-brand-600/20 transition-all hover:shadow-xl hover:shadow-brand-600/30 hover:-translate-y-0.5 active:translate-y-0 disabled:opacity-50 disabled:pointer-events-none;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl border border-slate-200 dark:border-ink-700 bg-white dark:bg-ink-800 px-5 py-2.5 text-sm font-semibold text-slate-700 dark:text-slate-200 transition-all hover:border-brand-300 dark:hover:border-brand-600 hover:-translate-y-0.5 active:translate-y-0 disabled:opacity-50 disabled:pointer-events-none;
+  }
+
+  .input-field {
+    @apply w-full rounded-xl border border-slate-200 dark:border-ink-700 bg-white dark:bg-ink-800 px-4 py-2.5 text-sm text-slate-900 dark:text-slate-100 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-500/50 focus:border-brand-500 transition-colors;
+  }
+
+  .label-eyebrow {
+    @apply text-xs font-mono font-semibold uppercase tracking-widest text-signal-600 dark:text-signal-400;
+  }
+
+  .chip {
+    @apply inline-flex items-center rounded-full px-3 py-1 text-xs font-medium;
+  }
+}
