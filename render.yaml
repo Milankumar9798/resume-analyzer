@@ -1,7 +1,9 @@
 services:
   - type: web
     name: resume-analyzer-backend
-    env: java
+    runtime: image
+    image:
+      url: eclipse-temurin:17-jdk-alpine
     rootDir: backend
     buildCommand: ./mvnw clean package -DskipTests
     startCommand: java -jar target/*.jar
